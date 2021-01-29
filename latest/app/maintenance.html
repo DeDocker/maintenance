@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport'
+          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta http-equiv='refresh' content='10' >
+    <title>Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 25vw;
+        }
+
+        @media (max-width: 768px) {
+            .main-image {
+                width: 100%;
+                max-width: 80vw;
+            }
+        }
+
+        .page-description {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .description-bolded {
+            font-weight: bold;
+            font-size: 24px;
+            margin: 30px 0 10px;
+        }
+
+        .desmart-logo {
+            margin-top: 100px;
+        }
+
+        .desmart-logo img {
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class='page-wrapper'>
+    <div class='content-wrapper'>
+        <img class='main-image' src='maintenance.png' alt='maintenance-image'>
+        <div class='page-description'>
+            <p id='description-1' class='description-bolded'>Sorry, we're down for scheduled maintenance.</p>
+            <p id='description-2'>We'll be back up shortly.</p>
+        </div>
+        <a href='https://desmart.com' class='desmart-logo'>
+            <img src='logo.svg' alt='desmart-logo'>
+        </a>
+    </div>
+</div>
+
+<script>
+  const language = window.navigator.userLanguage || window.navigator.language
+  const descTitleRef = document.getElementById('description-1')
+  const descSubtitleRef = document.getElementById('description-2')
+
+  if (language === 'pl-PL') {
+    descTitleRef.innerText = 'Trwają prace modernizacyjne na stronie'
+    descSubtitleRef.innerText = 'Przepraszamy za chwilowe utrudnienia. Wracamy wkrótce!'
+  }
+</script>
+</body>
+</html>
